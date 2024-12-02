@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мониторинг сотрудников</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            margin: 20px 0;
+        }
+
+        .monitoring {
+            margin: 20px;
+            background-color: #e0f7fa; /* Нежно-голубой фон для статусов сотрудников */
+            color: black; /* Цвет текста для статусов сотрудников */
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%; /* Блок на всю ширину страницы */
+        }
+
+        .employee-status {
+            margin: 10px 0;
+        }
+
+        .btn-custom {
+            background-color: #28a745; /* Зеленый цвет кнопок */
+            color: white;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #218838; /* Темнее при наведении */
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>POLELAB</h1>
+    </header>
+    <div class="monitoring">
+        <h2>Мониторинг сотрудников</h2>
+        <div class="employee-status">Сотрудник 1: <span class="status">Не пришёл</span></div>
+        <div class="employee-status">Сотрудник 2: <span class="status">Не пришёл</span></div>
+        <!-- Добавьте больше сотрудников по необходимости -->
+    </div>
+    <div class="container text-center task-buttons">
+        <button class="btn btn-custom" onclick="location.href='index.html'">Главная</button>
+        <button class="btn btn-custom" onclick="location.href='tasks.html'">Задания</button>
+        <button class="btn btn-custom" onclick="location.href='employees.html'">Сотрудники</button>
+    </div>
+</body>
+</html>

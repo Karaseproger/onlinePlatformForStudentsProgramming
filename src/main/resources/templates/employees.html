@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сотрудники</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .employees {
+            margin: 20px;
+        }
+
+        .employee {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-custom {
+            background-color: #28a745; /* Зеленый цвет кнопок */
+            color: white;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #218838; /* Темнее при наведении */
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+
+        .blue-block {
+            background-color: #e0f7fa; /* Голубой фон для блока сотрудников */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>POLELAB</h1>
+    </header>
+    <div class="blue-block">
+        <h2>Список сотрудников</h2>
+        <div class="employee" id="employee1">
+            <span>Сотрудник 1</span>
+            <button class="btn btn-custom">Отметиться</button>
+        </div>
+        <div class="employee" id="employee2">
+            <span>Сотрудник 2</span>
+            <button class="btn btn-custom">Отметиться</button>
+        </div>
+        <!-- Добавьте больше сотрудников по необходимости -->
+    </div>
+    <div class="container text-center task-buttons">
+        <button class="btn btn-custom" onclick="location.href='index.html'">Главная</button>
+        <button class="btn btn-custom" onclick="location.href='tasks.html'">Задания</button>
+        <button class="btn btn-custom" onclick="location.href='monitoring.html'">Мониторинг сотрудников</button>
+    </div>
+</body>
+</html>

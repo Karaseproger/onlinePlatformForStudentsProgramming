@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задания</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: white;
+            margin: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .task-form {
+            background-color: #e0f7fa; /* Нежно-голубой фон для формы заданий */
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .btn-custom {
+            background-color: #28a745; /* Зеленый цвет кнопок */
+            color: white;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-custom:hover {
+            background-color: #218838; /* Темнее при наведении */
+            transform: scale(1.05); /* Увеличение при наведении */
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>POLELAB</h1>
+</header>
+<div class="container task-form">
+    <h2>Добавление задания</h2>
+    <form action="/insidezd" method="post">
+        <div class="form-group">
+            <input type="text" name="title" class="form-control" placeholder="Тема задания" required>
+        </div>
+        <div class="form-group">
+            <input type="date"  name="date" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <textarea name="full_text" class="form-control" placeholder="ответ на задания" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-custom">Добавить задание</button>
+    </form>
+</div>
+<div id="tasks-list" class="container tasks-list">
+    <!-- Список заданий будет отображаться здесь -->
+</div>
+<div class="container text-center task-buttons">
+    <button class="btn btn-custom" onclick="location.href='admin'">Главная</button>
+    <button class="btn btn-custom" onclick="location.href='employees.html'">Сотрудники</button>
+    <button class="btn btn-custom" onclick="location.href='monitoring.html'">Мониторинг сотрудников</button>
+</div>
+</body>
+</html>

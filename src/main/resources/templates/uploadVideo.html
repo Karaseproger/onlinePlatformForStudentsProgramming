@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузить видео</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"], textarea, input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Загрузить видео</h1>
+
+    <!-- Форма для загрузки видео -->
+    <form action="/uploadVideo" method="POST" enctype="multipart/form-data">
+        <label for="title">Название видео:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Описание видео:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="uploader">Ваше имя:</label>
+        <input type="text" id="uploader" name="uploader" required>
+
+        <label for="videoFile">Выберите видео:</label>
+        <input type="file" id="videoFile" name="videoFile" accept="video/*" required>
+
+        <button type="submit">Загрузить</button>
+    </form>
+</div>
+
+<footer>
+    <p>© 2024 ПолеЛаб | Все права защищены</p>
+</footer>
+
+</body>
+</html>

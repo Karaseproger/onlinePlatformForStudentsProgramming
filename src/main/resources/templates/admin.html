@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polelab - Администратор</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Основные стили */
+       body.light-mode {
+           background-color: #f4f6f9;
+           color: #2c3e50;
+           transition: background-color 0.4s ease, color 0.4s ease;
+       }
+       body.dark-mode {
+           background-color: #2c3e50;
+           color: #ecf0f1;
+           transition: background-color 0.4s ease, color 0.4s ease;
+       }
+
+       /* Навигация */
+       .navbar {
+           background-color: #34495e;
+           padding: 15px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+       }
+       .dark-mode .navbar {
+           background-color: #1f2d3a;
+       }
+       .navbar h1 {
+           font-size: 2em;
+           font-weight: bold;
+           color: #ffffff;
+           transition: color 0.4s ease;
+       }
+       .theme-icon {
+           cursor: pointer;
+           font-size: 1.8em;
+           color: #ffffff;
+           transition: color 0.4s ease;
+       }
+       .dark-mode .theme-icon {
+           color: #ecf0f1;
+       }
+
+       /* Приветственное сообщение */
+       .welcome-message {
+           background-color: #ecf0f1;
+           padding: 20px;
+           font-size: 1.4em;
+           color: #34495e;
+           text-align: center;
+           border-radius: 10px;
+           margin-top: 20px;
+           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+           transition: background-color 0.4s ease, color 0.4s ease;
+       }
+       .dark-mode .welcome-message {
+           background-color: #3b4a59;
+           color: #ecf0f1;
+       }
+
+       /* Кнопки */
+       .btn-custom {
+           display: block;
+           width: 80%;
+           max-width: 300px;
+           margin: 15px auto;
+           padding: 15px;
+           font-size: 1.1em;
+           font-weight: bold;
+           color: #ffffff;
+           text-align: center;
+           border: none;
+           border-radius: 8px;
+           background-color: #2c3e50;
+           box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+           text-decoration: none; /* Убирает подчеркивание */
+           transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+       }
+       .btn-custom:hover {
+           transform: scale(1.05);
+           box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+           background-color: #1f2d3a;
+       }
+       .dark-mode .btn-custom {
+           background-color: #34495e;
+       }
+       .dark-mode .btn-custom:hover {
+           background-color: #2c3e50;
+       }
+
+       /* Контейнер кнопок */
+       .button-container {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           margin: 40px 0;
+       }
+
+       /* Адаптивность */
+       @media (max-width: 768px) {
+           .btn-custom {
+               width: 100%;
+           }
+           .welcome-message {
+               font-size: 1.2em;
+           }
+       }
+    </style>
+</head>
+<body class="light-mode">
+
+<nav class="navbar navbar-dark">
+    <div class="container-fluid">
+        <div class="logo-container">
+
+            <h1>Polelab</h1>
+        </div>
+        <div class="theme-icon" onclick="toggleTheme()">🦿</div>
+    </div>
+</nav>
+
+<div class="welcome-message">Добро пожаловать, администратор</div>
+<div class="container mt-4">
+    <div class="button-container">
+        <div class="task-buttons">
+            <a href="/zadan/add" class="btn-custom">Публикация Заданий</a>
+            <a href="/upload" class="btn-custom">добавить видео урок</a>
+            <a href="/admininsidezd" class="btn-custom">Мониторинг сдачи заданий</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleTheme() {
+        const body = document.body;
+        const themeIcon = document.querySelector('.theme-icon');
+
+        body.classList.toggle('dark-mode');
+        if (body.classList.contains('dark-mode')) {
+            themeIcon.textContent = '🌜';
+        } else {
+            themeIcon.textContent = '🌞';
+        }
+    }
+</script>
+
+</body>
+</html>
